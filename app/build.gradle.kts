@@ -4,7 +4,7 @@
 
 plugins {
     id("com.suanki.scala-spark-library-conventions")
-    application
+//    application
 }
 
 dependencies {
@@ -12,7 +12,7 @@ dependencies {
     implementation(project(":utilities"))
 }
 
-application {
-    // Define the main class for the application.
-    mainClass.set("com.suanki.app.App")
-}
+//application {
+//    // Define the main class for the application.
+//    mainClass.set("com.suanki.app.App")
+//}

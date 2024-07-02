@@ -7,7 +7,7 @@ class CountWithScala extends AnyFlatSpec {
 
   it should("match the greeting word") in {
 
-    assert("Pihu1" == App.greeting())
+    assert("Pihu" == App.greeting())
   }
 
 
