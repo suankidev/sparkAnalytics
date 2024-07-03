@@ -1,5 +1,3 @@
-import com.sun.org.apache.bcel.internal.Repository
-
 plugins {
     id("com.suanki.scala-library-conventions")
 }
