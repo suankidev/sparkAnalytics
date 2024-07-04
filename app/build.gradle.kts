@@ -9,7 +9,8 @@ repositories{
 }
 
 dependencies {
-    implementation("org.apache.commons:commons-text")
+                          implementation("org.apache.commons:commons-text")
+
     implementation(project(":utilities"))
 }
 
@@ -18,6 +19,9 @@ dependencies {
 tasks{
     shadowJar{
 
-        
+        isZip64=true
+        archiveClassifier.set("fatjar")
+        archiveBaseName.set("shadow")
+        archiveFilename.set("project.name")
     }
 }
