@@ -3,7 +3,7 @@ plugins {
     scala
 }
 
-repositories {
+repositories{
     mavenCentral()
 }
 
@@ -26,21 +26,36 @@ dependencies {
     implementation("org.scalatestplus:junit-5-10_2.13:3.2.19.0")
 }
 
-// tasks.named<Test>("test") {
-//     // Use JUnit Platform for unit tests.
-//     useJUnitPlatform()
-// }
+  configurations.all{
+        resolutionStrategy{
+            eachDependency{
+                when(requested.name){
+                    "log4j-api" -> useVersion("2.17.2")
+                    "log4j-core" -> useVersion("2.17.2")
+                    "log4j-to-slf4j" -> useVersion("2.17.2")
+                    "log4j-api-scala_2.13" -> useVersion("13.0")
+                }
+            }
+        }
+    }
+
+
+tasks {
+   test{
+       useJUnitPlatform {
+           includeEngines("scalatest","junit-jupiter")
+           testLogging {
+               events("passed", "skipped", "failed")
+           }
+       }
+   }
+}
 
 
 
-//tasks {
-//   test{
-//       useJUnitPlatform {
-//           includeEngines("scalatest","junit-jupiter")
-//           testLogging {
-//               events("passed", "skipped", "failed")
-//           }
-//       }
-//   }
-//}
-//
+ task("printName"){
+            doLast(){
+                println("project Name: ${project.name}")
+                println("project Version: ${project.version}")
+            }
+}

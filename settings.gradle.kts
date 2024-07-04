@@ -1,9 +1,19 @@
+rootProject.name = "sparkAnalytics"
+
+pluginManagement{
+
+    repositories{
+        gradlePluginPortal()
+        mavenCentral()
+        maven {
+            url = uri("https://plugins.gradle.org/m2/")
+        }
+    }
+
+}
+
 plugins {
-    // Apply the foojay-resolver plugin to allow automatic download of JDKs
     id("org.gradle.toolchains.foojay-resolver-convention") version "0.4.0"
 }
 
-rootProject.name = "sparkAnalytics"
-include("app", "datapull" , "utilities")
-
-
+include(    "app",    "datapull",    "utilities")
