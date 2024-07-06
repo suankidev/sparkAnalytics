@@ -11,8 +11,7 @@ object App {
     flightDf.show()
   }
 
-
-  def greeting():String={
+  def greeting(): String = {
 
     "Pihu"
   }

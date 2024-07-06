@@ -1,4 +1,4 @@
-package com.suanki.dataTest
+package com.suanki.datatest
 
 case class Person(
     firstName: String,
