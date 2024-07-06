@@ -16,8 +16,3 @@ trait Spark{
     .appName(appName)
     .getOrCreate()
 }
-
-object Spark{
-
-
-}

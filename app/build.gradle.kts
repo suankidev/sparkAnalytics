@@ -1,8 +1,10 @@
 plugins {
     id("com.suanki.scala-spark-library-conventions")
-    id("com.github.johnrengelman.shadow") version("8.1.1")
+    id("com.github.johnrengelman.shadow")
 }
 
+
+version="1.0.0"
 
 repositories{
     mavenCentral()
@@ -10,6 +12,7 @@ repositories{
 
 dependencies {
     implementation("org.apache.commons:commons-text")
+    implementation(project(":datapull"))
     implementation(project(":utilities"))
 }
 
@@ -17,7 +20,8 @@ dependencies {
 
 tasks{
     shadowJar{
-
-        
+        isZip64=true
+        archiveBaseName.set("fat-jar")
+        archiveFileName.set(project.name + "_" + project.property("version").toString() + ".jar")
     }
 }
