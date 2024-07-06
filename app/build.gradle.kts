@@ -14,14 +14,17 @@ dependencies {
     implementation("org.apache.commons:commons-text")
     implementation(project(":datapull"))
     implementation(project(":utilities"))
+    implementation(project(":dataTest"))
 }
 
 
 
 tasks{
     shadowJar{
+
         isZip64=true
-        archiveBaseName.set("fat-jar")
-        archiveFileName.set(project.name + "_" + project.property("version").toString() + ".jar")
+        archiveClassifier.set("fatjar")
+        archiveBaseName.set("shadow")
+        archiveFilename.set("project.name")
     }
 }
