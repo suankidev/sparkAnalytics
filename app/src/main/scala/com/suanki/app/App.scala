@@ -4,15 +4,12 @@
 package com.suanki.app
 
 object App {
-  val flightDf = FlightData.getData
 
   def main(args: Array[String]): Unit = {
     println("=" * 50)
-    flightDf.show()
   }
 
   def greeting(): String = {
-
     "Pihu"
   }
 
