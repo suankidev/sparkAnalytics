@@ -13,6 +13,7 @@ pluginManagement{
     plugins{
         id("com.diffplug.spotless") version("6.13.0")
         id("com.github.johnrengelman.shadow") version("8.1.1")
+        id("org.sonarqube") version ("5.1.0.4882")
     }
 
 }

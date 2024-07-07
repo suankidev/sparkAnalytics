@@ -9,8 +9,8 @@ object App {
     println("=" * 50)
   }
 
-  def greeting(): String = {
-    "Pihu"
+  def greeting(name: String): String = {
+    name
   }
 
 }
