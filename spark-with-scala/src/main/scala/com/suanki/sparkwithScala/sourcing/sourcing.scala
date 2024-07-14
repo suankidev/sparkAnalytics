@@ -1,4 +1,4 @@
-package com.suanki
+package com.suanki.sparkwithScala
 
 package object sourcing {
 

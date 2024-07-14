@@ -1,4 +1,4 @@
-package com.suanki.sourcing
+package com.suanki.sparkwithScala.sourcing
 
 import org.apache.spark.sql.SparkSession
 

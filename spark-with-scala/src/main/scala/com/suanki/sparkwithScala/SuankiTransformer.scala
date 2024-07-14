@@ -1,6 +1,6 @@
-package com.suanki
+package com.suanki.sparkwithScala
 
-import com.suanki.sourcing.{ExerciseOnDF, SparkOptimization}
+import com.suanki.sparkwithScala.sourcing.{ExerciseOnDF, SparkOptimization}
 import com.suanki.utilities.sparkUtils.{AppLogger, CommonUtils, SparkUtils}
 
 object SuankiTransformer {

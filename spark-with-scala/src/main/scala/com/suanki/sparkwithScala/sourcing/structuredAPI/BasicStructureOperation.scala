@@ -1,4 +1,4 @@
-package com.suanki.sourcing.structuredAPI
+package com.suanki.sparkwithScala.sourcing.structuredAPI
 
 import com.suanki.utilities.sparkUtils.SparkUtils
 import org.apache.spark.sql

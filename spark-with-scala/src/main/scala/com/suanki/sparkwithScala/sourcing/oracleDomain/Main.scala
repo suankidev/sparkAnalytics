@@ -1,4 +1,4 @@
-package com.suanki.sourcing.oracleDomain
+package com.suanki.sparkwithScala.sourcing.oracleDomain
 
 import com.suanki.utilities.sparkUtils.Spark
 import org.apache.spark.sql.DataFrame

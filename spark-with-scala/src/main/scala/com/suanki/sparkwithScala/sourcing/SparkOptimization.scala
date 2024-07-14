@@ -1,4 +1,4 @@
-package com.suanki.sourcing
+package com.suanki.sparkwithScala.sourcing
 
 import com.suanki.utilities.sparkUtils.{AppLogger, CommonUtils}
 import org.apache.log4j.Logger

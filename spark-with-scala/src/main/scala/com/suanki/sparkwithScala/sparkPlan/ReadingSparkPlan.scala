@@ -1,4 +1,4 @@
-package com.suanki.sparkPlan
+package com.suanki.sparkwithScala.sparkPlan
 
 import com.suanki.utilities.Spark
 import org.apache.spark.sql.functions._

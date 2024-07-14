@@ -1,4 +1,4 @@
-package com.suanki
+package com.suanki.sparkwithScala
 
 import org.apache.spark.sql.catalyst.plans.Inner
 import org.apache.spark.sql.{DataFrame, SparkSession}

@@ -1,4 +1,4 @@
-package com.suanki.sourcing
+package com.suanki.sparkwithScala.sourcing
 
 import com.suanki.utilities.sparkUtils.CommonUtils
 import org.apache.spark.sql.functions._
