@@ -8,6 +8,7 @@ subprojects {
     apply {
         plugin("com.diffplug.spotless")
     }
+
     spotless {
         scala {
             // version and configFile, scalaMajorVersion are all optional
@@ -17,6 +18,8 @@ subprojects {
             scalafmt()
         }
     }
+
+    tasks.spotlessCheck{dependsOn(tasks.spotlessApply)}
 }
 
 allprojects {

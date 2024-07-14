@@ -3,7 +3,7 @@
  */
 
 plugins {
-    id("com.suanki.scala-library-conventions")
+    id("com.suanki.scala-spark-library-conventions")
 }
 
 dependencies{

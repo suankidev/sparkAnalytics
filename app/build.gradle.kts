@@ -1,6 +1,7 @@
 plugins {
     id("com.suanki.scala-spark-library-conventions")
     id("com.github.johnrengelman.shadow")
+    id("jacoco-report-aggregation")
 }
 
 
@@ -15,6 +16,11 @@ dependencies {
     implementation(project(":datapull"))
     implementation(project(":utilities"))
     implementation(project(":datatest"))
+
+    //jacoco Aggregation reports
+    jacocoAggregation(project(":datapull"))
+    jacocoAggregation(project(":utilities"))
+    jacocoAggregation(project(":datatest"))
 }
 
 
@@ -29,3 +35,19 @@ tasks{
 
     }
 }
+
+//reporting {
+//    reports {
+//        val testCodeCoverageReport by creating(JacocoCoverageReport::class) {
+//            testType.set(TestSuiteType.UNIT_TEST)
+//        }
+//    }
+//}
+//
+//tasks.check {
+//    dependsOn(tasks.named<JacocoReport>("testCodeCoverageReport"))
+//}
+
+//tasks.check{
+//    dependsOn(tasks.testCodeCoverageReport)
+//}

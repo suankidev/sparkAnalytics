@@ -2,7 +2,6 @@
 plugins {
     id("scala")
     id("jacoco")
-    id("jacoco-report-aggregation")
 }
 
 repositories{
@@ -63,15 +62,17 @@ tasks {
 }
 
 tasks.withType<ScalaCompile>().configureEach {
-    scalaCompileOptions.forkOptions.apply {
-        memoryMaximumSize = "1g"
-        jvmArgs = listOf("-XX:MaxMetaspaceSize=700m")
-    }
-    //https://docs.gradle.org/current/userguide/scala_plugin.html
+//    scalaCompileOptions.forkOptions.apply {
+//        memoryMaximumSize = "1g"
+//        jvmArgs = listOf("-XX:MaxMetaspaceSize=700m")
+//    }
+//    //https://docs.gradle.org/current/userguide/scala_plugin.html
     scalaCompileOptions.additionalParameters=listOf("-release:8")
 }
 
 
-tasks.named("test"){finalizedBy("jacocoTestReport")}
-tasks.named("jacocoTestReport"){dependsOn("test") }
-tasks.named("build"){dependsOn("jacocoTestReport")}
+//tasks.named("test"){finalizedBy("jacocoTestReport")}
+//tasks.named("jacocoTestReport"){dependsOn("test") }
+
+tasks.test{finalizedBy(tasks.jacocoTestReport)}
+tasks.jacocoTestReport{dependsOn(tasks.test)}

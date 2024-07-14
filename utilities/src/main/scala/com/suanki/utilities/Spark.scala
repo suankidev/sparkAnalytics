@@ -1,6 +1,7 @@
 package com.suanki.utilities
 
 import org.apache.spark.sql.SparkSession
+import scala.language.implicitConversions
 
 trait Spark {
   implicit var master: String = "local[2]"

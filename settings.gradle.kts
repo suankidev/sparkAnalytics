@@ -24,4 +24,12 @@ plugins {
 
 }
 
-include(    "app",    "datapull",    "utilities", "datatest")
+include(
+    "app",
+    "datapull",
+    "utilities",
+    "datatest",
+    "dsa",
+    "spark-with-scala",
+    "scala-dev"
+)
