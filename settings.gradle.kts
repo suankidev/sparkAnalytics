@@ -31,5 +31,6 @@ include(
     "datatest",
     "dsa",
     "spark-with-scala",
-    "scala-dev"
+    "scala-dev",
+    "applied-one"
 )

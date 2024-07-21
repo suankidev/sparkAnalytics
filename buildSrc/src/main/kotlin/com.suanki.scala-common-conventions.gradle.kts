@@ -22,6 +22,8 @@ dependencies {
     // Use JUnit Jupiter for testing.
     implementation("org.junit.jupiter:junit-jupiter:5.9.1")
     implementation("org.scalatest:scalatest_2.13:3.2.19")
+    implementation("org.scalactic:scalactic_2.13:3.2.13")
+    implementation("org.scalacheck:scalacheck_2.13:1.15.4")
     implementation("org.junit.platform:junit-platform-engine:1.10.0")
     implementation("org.junit.platform:junit-platform-launcher:1.10.0")
     implementation("org.scalatestplus:junit-5-10_2.13:3.2.19.0")
