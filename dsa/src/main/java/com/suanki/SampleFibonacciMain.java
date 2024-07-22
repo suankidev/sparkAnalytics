@@ -1,9 +1,9 @@
 package com.suanki;
 
+import java.util.Arrays;
+
 import com.suanki.dsa.Fibonacci;
 import com.suanki.dsa.FibonacciSc;
-
-import java.util.Arrays;
 
 public class SampleFibonacciMain {
 

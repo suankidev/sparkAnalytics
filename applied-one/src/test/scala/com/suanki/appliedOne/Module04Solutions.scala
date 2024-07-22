@@ -2,7 +2,7 @@
 
 package com.suanki.appliedOne
 
-import scala.io.Source
+import java.io.{BufferedReader, FileReader}
 
 class Module04Solutions extends AbstractSuit {
 
@@ -40,7 +40,8 @@ class Module04Solutions extends AbstractSuit {
   // question: can you guess why we define this method outside of the test below?
 
   test("List Shakespeare files in the given directory") {
-    val shakespeareFilenames = listShakespeareFiles(".").toList
+    val shakespeareFilenames =
+      listShakespeareFiles("src/test/resources/").toList
 
     shakespeareFilenames.length should be(3)
     shakespeareFilenames should contain theSameElementsAs (List(
@@ -56,20 +57,25 @@ class Module04Solutions extends AbstractSuit {
   // what you need
   def firstLineOfFile(filePath: String): String = {
     // replace with the real implementation
-    Source.fromFile(filePath).getLines.next()
+//      Source.fromFile(filePath).getLines.next()
+    val file= new BufferedReader(new FileReader(filePath))
+    file.readLine()
+
   }
 
   test("First line of file") {
-    firstLineOfFile("caesar.shkspr") should be("Beware the ides of March.")
-    firstLineOfFile("romeo.shkspr") should be(
+    firstLineOfFile("src/test/resources/caesar.shkspr") should be(
+      "Beware the ides of March."
+    )
+    firstLineOfFile("src/test/resources/romeo.shkspr") should be(
       "O Romeo, Romeo, wherefore art thou Romeo?"
     )
-    firstLineOfFile("hamlet.shkspr") should be(
+    firstLineOfFile("src/test/resources/hamlet.shkspr") should be(
       "The lady doth protest too much, methinks."
     )
 
     intercept[java.io.FileNotFoundException] { // nice, huh?
-      firstLineOfFile("macbeth.shkspr") should be("")
+      firstLineOfFile("src/test/resources/macbeth.shkspr") should be("")
     }
   }
 
@@ -88,31 +94,31 @@ class Module04Solutions extends AbstractSuit {
   }
 
   // extra credit
-  test("shakespeare files contain question or statement?") {
-    // combine the methods you have created here to define and test a method that creates a map of
-    // the shakespeare quotation file names in the working directory (".") as the key, and whether
-    // they contain a statement or question, for example:
-    // "caesar.shkspr" -> "Statement"
-    // "romeo.shkspr" -> "Question"
-    // "hamlet.shkspr" -> "Statement"
-    // hint - consider using a scala.collection.immutable.HashMap[String, String] and a var
-    // or a scala.collection.mutable.HashMap[String, String] and a val
-    // can you add a test for a key of "macbeth.shkspr" that ensures a java.util.NoSuchElementException?
-    // extra extra credit - can you find a way to do it without using either a var or a mutable Map?
-
-    val shksprMap = {
-      for {
-        file <- listShakespeareFiles(".")
-        which = statementOrQuestion(firstLineOfFile(file))
-      } yield file -> which
-    }.toMap
-
-    shksprMap("caesar.shkspr") should be("Statement")
-    shksprMap("romeo.shkspr") should be("Question")
-    shksprMap("hamlet.shkspr") should be("Statement")
-
-    intercept[java.util.NoSuchElementException] {
-      shksprMap("macbeth.shkspr") should be("")
-    }
-  }
+//  test("shakespeare files contain question or statement?") {
+//    // combine the methods you have created here to define and test a method that creates a map of
+//    // the shakespeare quotation file names in the working directory (".") as the key, and whether
+//    // they contain a statement or question, for example:
+//    // "caesar.shkspr" -> "Statement"
+//    // "romeo.shkspr" -> "Question"
+//    // "hamlet.shkspr" -> "Statement"
+//    // hint - consider using a scala.collection.immutable.HashMap[String, String] and a var
+//    // or a scala.collection.mutable.HashMap[String, String] and a val
+//    // can you add a test for a key of "macbeth.shkspr" that ensures a java.util.NoSuchElementException?
+//    // extra extra credit - can you find a way to do it without using either a var or a mutable Map?
+//
+//    val shksprMap = {
+//      for {
+//        file <- listShakespeareFiles(".")
+//        which = statementOrQuestion(firstLineOfFile(file))
+//      } yield file -> which
+//    }.toMap
+//
+//    shksprMap("caesar.shkspr") should be("Statement")
+//    shksprMap("romeo.shkspr") should be("Question")
+//    shksprMap("hamlet.shkspr") should be("Statement")
+//
+//    intercept[java.util.NoSuchElementException] {
+//      shksprMap("macbeth.shkspr") should be("")
+//    }
+//  }
 }

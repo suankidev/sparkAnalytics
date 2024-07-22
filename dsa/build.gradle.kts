@@ -1,6 +1,6 @@
 
 plugins{
-    id("com.suanki.scala-spark-library-conventions")
+    id("com.suanki.applied-and-dsa.scala")
     id("java")
     id("application")
 }

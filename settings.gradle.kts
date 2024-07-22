@@ -32,5 +32,6 @@ include(
     "dsa",
     "spark-with-scala",
     "scala-dev",
-    "applied-one"
+    "applied-one",
+    "applied-two",
 )

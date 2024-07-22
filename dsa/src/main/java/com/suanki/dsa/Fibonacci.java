@@ -21,15 +21,17 @@ public class Fibonacci {
 
         for(int num=0;num<limit;num++){
 
-            if(num == 0){
-                fibnum[0] = first;
-            }
-            else if(num == 1){
-                fibnum[1] = second;
-            }
-            else {
-                fibnum[num] = next;
-                next = first + second;
+            switch (num) {
+                case 0:
+                    fibnum[0] = first;
+                    break;
+                case 1:
+                    fibnum[1] = second;
+                    break;
+                default:
+                    fibnum[num] = next;
+                    next = first + second;
+                    break;
             }
 
             first = second;
