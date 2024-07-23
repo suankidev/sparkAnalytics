@@ -58,7 +58,7 @@ class Module04Solutions extends AbstractSuit {
   def firstLineOfFile(filePath: String): String = {
     // replace with the real implementation
 //      Source.fromFile(filePath).getLines.next()
-    val file= new BufferedReader(new FileReader(filePath))
+    val file = new BufferedReader(new FileReader(filePath))
     file.readLine()
 
   }

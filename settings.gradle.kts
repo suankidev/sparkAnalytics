@@ -34,4 +34,6 @@ include(
     "scala-dev",
     "applied-one",
     "applied-two",
+    "applied-three",
+    "applied-advance"
 )

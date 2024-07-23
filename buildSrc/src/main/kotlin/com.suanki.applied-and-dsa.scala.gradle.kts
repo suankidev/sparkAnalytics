@@ -25,6 +25,7 @@ dependencies {
     implementation("org.junit.platform:junit-platform-engine:1.10.0")
     implementation("org.junit.platform:junit-platform-launcher:1.10.0")
     implementation("org.scalatestplus:junit-5-10_2.13:3.2.19.0")
+    implementation("org.scalamock:scalamock_2.13:6.0.0")
 }
 
 
