@@ -1,16 +1,5 @@
-
-
-
-val str="this is test \"\" string "
-
-
+val str = "this is test \"\" string "
 
 str.contains(f"""\"\"""")
 
-
 str.split(" ")
-
-
-
-
-
