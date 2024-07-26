@@ -7,7 +7,7 @@ plugins{
 
 application{
 
-    mainClass.set("com.suanki.SampleFibonacciMain")
+    mainClass.set("com.suanki.dsa.DsaApp")
 }
 
 tasks.named<AbstractCompile>("compileScala") {
