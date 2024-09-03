@@ -167,7 +167,7 @@ Repeat the above steps for the number of left rotations required.
   ): Array[Int] = {
 
     @tailrec
-    def loop(start: Int = 0, end: Int = 0):Array[Int] = {
+    def loop(start: Int = 0, end: Int = 0): Array[Int] = {
       var temp = 0
       if (start > end) arr
       else {

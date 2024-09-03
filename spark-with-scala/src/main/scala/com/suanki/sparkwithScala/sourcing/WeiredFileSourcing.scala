@@ -19,6 +19,8 @@ class WeiredFileSourcing(spark: SparkSession) {
         .option("quoteAll", value = false)
         .load(file)
     }
+
+    // 8381044237
     /*Fixing "" charecter since, it's loading double quote instead of null
  +----+-----+----+-------------+
 | _c0|  _c1| _c2|          _c3|
@@ -42,9 +44,29 @@ class WeiredFileSourcing(spark: SparkSession) {
         .map(row => row._1)
         .map(x => {
           val splitedStr = x.split(",")
-          val str = splitedStr.length
-          if (str == collength) splitedStr
+          println(s"splitedStr: ${splitedStr.mkString("|")}")
+          val stringLength: Int = splitedStr.length
+          if (stringLength == collength) splitedStr
+//          else if(stringLength < collength) {
+//            for(idx <- stringLength until  collength) {
+//              println(s"idx:$idx length of string: $stringLength  and collength $collength splitedStr: ${splitedStr.mkString("-")}")
+//              splitedStr :+ "tt"
+//            }
+//          }
           else splitedStr :+ ""
+        })
+    }
+
+    import scala.util.matching.Regex
+    {
+      fileRddWithIndex
+        .filter(x => x._2 == 4)
+        .map(x => {
+
+          val pattern = new Regex("^\".*$\"")
+          if (x._1.contains("\""))
+            x._1.replace("\"", "")
+          else x._1
         })
     }
 
@@ -62,6 +84,7 @@ class WeiredFileSourcing(spark: SparkSession) {
     }
 
     val finalDF = spark.createDataFrame(finalRdd, filedf.schema)
+    finalDF.show(truncate = false)
     /*
      o/p of finalDF
 +----+----+---+-------------+
@@ -75,7 +98,7 @@ class WeiredFileSourcing(spark: SparkSession) {
 
     // Solving issue after writing the file with option("quote",value="") and reading it back
 
-    val outputFileName = "spark-with-scala/src/main/resources/weiredcsv"
+    val outputFileName = "spark-with-scala/src/main/resources/output/weiredcsv"
 
     filedf.write
       .mode("overwrite")
@@ -86,6 +109,7 @@ class WeiredFileSourcing(spark: SparkSession) {
       .format("csv")
       .option("header", value = false)
       .load(outputFileName)
+      .show()
     /*
  +----+----+---+-------------+
 | _c0| _c1|_c2|          _c3|

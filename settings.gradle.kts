@@ -35,5 +35,6 @@ include(
     "applied-one",
     "applied-two",
     "applied-three",
-    "applied-advance"
+    "applied-advance",
+    "dev-inside-you"
 )

@@ -1,4 +1,6 @@
-id, name, age, address
-1001, "",23,Karvenager
-1002, "",24,RajendarNagar
-1003, "",25,
+id, name, age, party_id,address
+1001, "",23,"TX7947.793,30483",Karvenager
+1002, "",24,"TX7947.793,30483",RajendarNagar
+1003, "",25,"TX7947,Ystr",Kharadi
+1003, "",25,"TX7947,esfs",
+1003, "",25,,
