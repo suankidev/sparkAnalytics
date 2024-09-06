@@ -32,6 +32,8 @@ build/
 .worksheet
 bin/
 .cache
+pyenv/
+extralib/
 
 # intellij idea
 *.log
