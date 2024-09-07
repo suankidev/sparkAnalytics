@@ -1,5 +1,5 @@
 import requests
-
+import env
 def download_file(file):
-	res = requests.get(f"https://suanki-s3.s3.ap-south-1.amazonaws.com/{file}.csv")
+	res = requests.get(f"{env.s3_bucket_url}/{file}")
 	return res
