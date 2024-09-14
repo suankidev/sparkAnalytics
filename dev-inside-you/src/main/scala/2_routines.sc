@@ -45,9 +45,9 @@ object Routine {
 //2, loop(3)
 //3, loop(4)
 
-Routine.method
-Routine.method2
-Routine.method3
+DevMain.method
+DevMain.method2
+DevMain.method3
 
 
 /**
