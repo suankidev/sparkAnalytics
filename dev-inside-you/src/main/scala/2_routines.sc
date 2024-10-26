@@ -9,7 +9,7 @@ object Routine {
         currentIteration += 1
         loop
       } else
-      "done"
+        "done"
     }
 
     loop
@@ -28,17 +28,15 @@ object Routine {
     loop(1)
   }
 
-
-  def method3:String=
-    {
-      var currentIteration=1
-      while(currentIteration % 5 != 0){
-        println(currentIteration)
-        currentIteration +=1
-      }
-
-      "done"
+  def method3: String = {
+    var currentIteration = 1
+    while (currentIteration % 5 != 0) {
+      println(currentIteration)
+      currentIteration += 1
     }
+
+    "done"
+  }
 }
 //currentIteration=1
 //1, loop(2)
@@ -49,9 +47,5 @@ DevMain.method
 DevMain.method2
 DevMain.method3
 
-
-/**
- *
- * tail recursion
- *   if last call is either a call to itself or value
- */
+/** tail recursion if last call is either a call to itself or value
+  */

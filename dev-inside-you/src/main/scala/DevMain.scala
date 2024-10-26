@@ -1,17 +1,16 @@
 object DevMain {
 
-
-  def method={
+  def method = {
     var currentIteration: Int = 1
-  def loop:String={
-    if(currentIteration % 5 != 0) {
-      println(currentIteration)
-      currentIteration+=1
-      loop
-    } else
-      "done"
-  }
-  loop
+    def loop: String = {
+      if (currentIteration % 5 != 0) {
+        println(currentIteration)
+        currentIteration += 1
+        loop
+      } else
+        "done"
+    }
+    loop
   }
 
   def method2: String = {
@@ -26,21 +25,16 @@ object DevMain {
     loop(1)
   }
 
-
-  def main(args:Array[String]):Unit={
-    println("="*50)
+  def main(args: Array[String]): Unit = {
+    println("=" * 50)
     println("RoutineJ Object!")
 
-   println(
-         DevMain.method
-       )
+    println(
+      DevMain.method
+    )
 
+    println("=" * 50)
 
-    println("="*50)
-
-
-      }
-
+  }
 
 }
-

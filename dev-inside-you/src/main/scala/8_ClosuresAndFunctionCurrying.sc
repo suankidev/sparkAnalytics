@@ -1,17 +1,14 @@
-
-
 var x = 7
 
-def openTerm(x:Int):Int=>Int=
+def openTerm(x: Int): Int => Int =
   boundVariable => x + boundVariable
 
+def addToSeven: Int => Int = y => x + y
 
-def addToSeven:Int=>Int=y=>x+y
+val addToX: Int => Int =
+  y => x + y
 
-val addToX:Int=>Int=
-  y=>x+y
-
-val addToX1:Int=>Int=x+_
+val addToX1: Int => Int = x + _
 
 openTerm(7)(0)
 
