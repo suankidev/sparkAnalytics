@@ -50,8 +50,12 @@ val withdraw = Symbol("withdraw")
 thisOne(withdraw).asInstanceOf[Int => Unit](50)
 thatOne(deposit).asInstanceOf[Int => Unit](100)
 
-thisOne(balance).asInstanceOf[() => Int]()
-thatOne(balance).asInstanceOf[() => Int]()
+val thisOneBalance = thisOne(balance).asInstanceOf[() => Int]()
+val thatOneBalance = thatOne(balance).asInstanceOf[() => Int]()
+
+
+
+
 
 //https://stackoverflow.com/questions/65856527/what-is-a-side-effect-in-scala
 
